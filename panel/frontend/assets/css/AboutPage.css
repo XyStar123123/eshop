@@ -1,0 +1,117 @@
+/* About Page Styles */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: var(--text-color);
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.about-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.version-info {
+    color: var(--secondary-text);
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.section {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tech-item {
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.tech-item:hover {
+    transform: translateY(-3px);
+}
+
+.tech-item i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.changelog-entry {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.changelog-entry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.changelog-version {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.changelog-date {
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+    margin-left: 1rem;
+}
+
+.changelog-changes {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+.changelog-changes li {
+    margin-bottom: 0.3rem;
+}
+
+.env-details {
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 6px;
+    font-family: monospace;
+    white-space: pre;
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 1rem;
+    }
+    
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+}
