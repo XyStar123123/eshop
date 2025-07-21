@@ -125,7 +125,7 @@ $users = [
                                     </span>
                                 </td>
                                 <td class="last-login">
-                                    <i class="bi bi-clock"></i>
+                                    <i class="bi bi-eye"></i>
                                     <span><?php echo date('M j, Y', strtotime($user['last_login'])); ?></span>
                                 </td>
                                 <td class="actions-cell">
