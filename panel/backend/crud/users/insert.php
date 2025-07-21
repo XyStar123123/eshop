@@ -33,7 +33,7 @@
         
         $new_file_name = uniqid() . '.' . $ext;
         
-        move_uploaded_file($tmp_name, __DIR__ . '/../../public/uploads/images/users/' . $new_file_name);
+        move_uploaded_file($tmp_name, __DIR__ . '/../../../../public/uploads/images/users/' . $new_file_name);
 
         return  $new_file_name;
     }
