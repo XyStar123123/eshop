@@ -1,13 +1,13 @@
 <?php 
     require_once __DIR__ . '/../../backend/config/paths.php';
     require_once __DIR__ . '/../../backend/config/db.php';
-    require_once __DIR__ . '/../../backend/crud/select.php';
+    require_once __DIR__ . '/../../backend/crud/users/select.php';
 
     $user_id = $_GET['id'];
     $users = select("SELECT * FROM users WHERE user_id = '$user_id'");
 ?>
 <?php
-    require_once __DIR__ . '/../../backend/crud/update.php';
+    require_once __DIR__ . '/../../backend/crud/users/update.php';
     if(isset($_POST['submit'])){
         if(update($_POST) > 0){
             header("Location:/eshop/panel/home/users_table");

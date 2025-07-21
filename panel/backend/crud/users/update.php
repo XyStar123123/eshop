@@ -1,8 +1,8 @@
 <?php
 
 function upload(){
-    if (!file_exists('/../../public/uploads/images/users/')) {
-        mkdir('/../../public/uploads/images/users/', 0777, true);
+    if (!file_exists('/../../../public/uploads/images/users/')) {
+        mkdir('/../../../public/uploads/images/users/', 0777, true);
     }
     $file_name = $_FILES['avatar']['name'];
     $tmp_name = $_FILES['avatar']['tmp_name'];
@@ -11,7 +11,7 @@ function upload(){
     
     $new_file_name = uniqid() . '.' . $ext;
     
-    move_uploaded_file($tmp_name, __DIR__ . '/../../public/uploads/images/users/' . $new_file_name);
+    move_uploaded_file($tmp_name, __DIR__ . '/../../../public/uploads/images/users/' . $new_file_name);
 
     return  $new_file_name;
 }
@@ -36,7 +36,7 @@ function update($data){
         return false;
     }
     
-    $query = "UPDATE users SET email='$email', password_hash='$password', full_name='$full_name', avatar_path='$avatar_path', updated_at=NOW() WHERE user_id='$user_id'";
+    $query = "UPDATE users SET email='$email', password_hash='$password', full_name='$full_name', username='$username', avatar_path='$avatar_path', is_admin='$is_admin', updated_at=NOW() WHERE user_id='$user_id'";
     mysqli_query($conn, $query);
     
     return mysqli_affected_rows($conn);

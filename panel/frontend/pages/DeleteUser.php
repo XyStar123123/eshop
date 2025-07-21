@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/../../backend/crud/delete.php';
+    require_once __DIR__ . '/../../backend/crud/users/delete.php';
 
     $id=$_GET['id'];
     if(delete($id) > 0){
