@@ -21,7 +21,9 @@
     }
 
     function upload(){
-        
+        if (!isset($_FILES['avatar']) || $_FILES['avatar']['error'] !== UPLOAD_ERR_OK) {
+            return null;
+        }
 
         if (!file_exists('/../../public/uploads/images/users/')) {
             mkdir('/../../public/uploads/images/users/', 0777, true);

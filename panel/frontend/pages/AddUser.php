@@ -63,7 +63,7 @@
                                 <div class="file-upload">
                                     <label for="fileInput" class="upload-label">Upload</label>
                                     <input type="text" id="fileName" readonly>
-                                    <input type="file" name="avatar" id="fileInput" class="file-input" accept="image/*" required>
+                                    <input type="file" name="avatar" id="fileInput" class="file-input" accept="image/*">
                                 </div>
                             </div>
                         </div>
