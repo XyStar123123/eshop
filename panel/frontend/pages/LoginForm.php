@@ -46,6 +46,7 @@
             </div>
             <div class="links">
                 <a id="signIn">Sign In</a>
+                <span></span>
             </div>
             <input type="submit" value="Login">
         </form>

@@ -120,7 +120,7 @@
     opacity: 0.8;
 }
 .sign-form-container form input[type="submit"]:hover {
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(230, 240, 240);
 }
 
 .form-signup{
