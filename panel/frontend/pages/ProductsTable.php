@@ -1,4 +1,8 @@
-<?php require_once __DIR__ . '/../../backend/config/paths.php' ?>
+<?php 
+    require_once __DIR__ . '/../../backend/config/paths.php';
+    require_once __DIR__ . '/../../backend/crud/products/select.php';
+    $products = select("SELECT * FROM products");
+?>
 <div class="layout">
     <div class="left-side">
         <?php require_once __DIR__ . '/../../frontend/components/Sidebar.php' ?>
@@ -11,7 +15,7 @@
             <div class="breadcrumb-container"></div>
             <div class="data-table-container">
                 <div class="data-table-header">
-                    <h2 class="data-table-title">Users Management</h2>
+                    <h2 class="data-table-title">Products Management</h2>
                     <div class="data-table-actions">
                         <button class="btn btn-primary" onclick="window.location.href = '/eshop/panel/home/users_table/add_product'">
                             <i class="bi bi-plus-circle"></i>
@@ -29,11 +33,12 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Email</th>
-                                <th>Full Name</th>
-                                <th>Username</th>
-                                <th>Avatar</th>
-                                <th>Admin</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Image</th>
+                                <th>Active</th>
                                 <th>Created</th>
                                 <th>Updated</th>
                                 <th>Actions</th>
@@ -41,15 +46,16 @@
                         </thead>
                         <tbody class="itemList">
                             <?php $i = 1; ?>
-                            <?php foreach($users as $u): ?>
+                            <?php foreach($products as $p): ?>
                             <tr>
                                 <td><?php echo $i++; ?></td>
-                                <td><?php echo htmlspecialchars($u['email']); ?></td>
-                                <td><?php echo htmlspecialchars($u['full_name']); ?></td>
-                                <td><?php echo htmlspecialchars($u['username']); ?></td>
+                                <td><?php echo htmlspecialchars($p['name']); ?></td>
+                                <td><?php echo htmlspecialchars($p['description']); ?></td>
+                                <td><?php echo htmlspecialchars($p['price']); ?></td>
+                                <td><?php echo htmlspecialchars($p['stock_quantity']); ?></td>
                                 <td>
-                                    <?php if(!empty($u['avatar_path'])): ?>
-                                        <img src="/eshop/panel/public/uploads/images/users/<?php echo htmlspecialchars($u['avatar_path']); ?>" 
+                                    <?php if(!empty($p['image_path'])): ?>
+                                        <img src="/eshop/panel/public/uploads/images/users/<?php echo htmlspecialchars($p['image_path']); ?>" 
                                              alt="User Avatar" 
                                              style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
                                     <?php else: ?>
@@ -58,14 +64,14 @@
                                 </td>
                                 <td>
                                     <?php
-                                        if($u['is_admin'] == 1):
+                                        if($p['is_active'] == 1):
                                     ?>
                                         <span class="status status-active">
                                             <i class="bi bi-check-circle-fill"></i>
                                             <span class="status-text">Yes</span>
                                         </span>
                                     <?php
-                                        elseif($u['is_admin'] == 0):
+                                        elseif($p['is_active'] == 0):
                                     ?>
                                         <span class="status status-inactive">
                                             <i class="bi bi-x-circle-fill"></i>
@@ -77,17 +83,17 @@
                                 </td>
                                 <td class="created-date">
                                     <i class="bi bi-calendar-plus"></i>
-                                    <span><?php echo date('M j, Y', strtotime($u['created_at'])); ?></span>
+                                    <span><?php echo date('M j, Y', strtotime($p['created_at'])); ?></span>
                                 </td>
                                 <td class="updated-date">
                                     <i class="bi bi-calendar-check"></i>
-                                    <span><?php echo date('M j, Y', strtotime($u['updated_at'])); ?></span>
+                                    <span><?php echo date('M j, Y', strtotime($p['updated_at'])); ?></span>
                                 </td>
                                 <td>
-                                    <button class="btn btn-sm btn-edit" onclick="window.location.href = '/eshop/panel/home/users_table/edit_user?id=<?php echo $u['user_id']; ?>'">
+                                    <button class="btn btn-sm btn-edit" onclick="window.location.href = '/eshop/panel/home/users_table/edit_user?id=<?php echo $p['product_id']; ?>'">
                                         <i class="bi bi-pencil"></i>
                                     </button>
-                                    <button class="btn btn-sm btn-delete" onclick="if(confirm('Are you sure you want to delete this user?')) { window.location.href = '/eshop/panel/home/users_table/delete_user?id=<?php echo $u['user_id']; ?>'; }">
+                                    <button class="btn btn-sm btn-delete" onclick="if(confirm('Are you sure you want to delete this user?')) { window.location.href = '/eshop/panel/home/users_table/delete_user?id=<?php echo $p['product_id']; ?>'; }">
                                         <i class="bi bi-trash"></i>
                                     </button>
                                 </td>
@@ -98,7 +104,7 @@
                 </div>
                 <div class="data-table-footer">
                     <div class="pagination-info">
-                        <?php if(!$users){ echo 'No data fetched or table empty'; } else{ echo "Showing <span class='highlight'>1</span> to <span class='highlight'>5</span> of <span class='highlight'>5</span> entries"; } ?>
+                        <?php if(!$products){ echo 'No data fetched or table empty'; } else{ echo "Showing <span class='highlight'>1</span> to <span class='highlight'>5</span> of <span class='highlight'>5</span> entries"; } ?>
                     </div>
                     <div class="pagination">
                         <button class="pagination-btn" disabled>

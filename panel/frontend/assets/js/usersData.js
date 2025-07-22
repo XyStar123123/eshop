@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             allItem = data
             renderTable(allItem)
         })
-        .catch(error => console.error('Fetch error: ', error))
+        .catch(error => console.log('Fetch error: ', error))
 
     function renderTable(data){
         itemTable.innerHTML = ''

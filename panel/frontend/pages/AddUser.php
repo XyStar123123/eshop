@@ -45,7 +45,7 @@
                             <div class="password-input">
                                 <input type="password" name="password" id="password">
                                 <button type="button" class="toggle-password" id="showPassword" aria-label="Toggle password visibility">
-                                    <i class="bi bi-eye" id="visibleEyeIcon"></i>
+                                    <i class="bi bi-eye-slash" id="visibleEyeIcon"></i>
                                 </button>
                             </div>
                         </div>
@@ -95,5 +95,5 @@
         <?php require_once __DIR__ . '/../../frontend/components/Footer.php' ?>
     </div>
 </div>
-<script src="eshop/panel/frontend/assets/js/showingPassword.js"></script>
-<script src="eshop/panel/frontend/assets/js/fileUpload.js"></script>
+<script src="/eshop/panel/frontend/assets/js/showingPassword.js"></script>
+<script src="/eshop/panel/frontend/assets/js/fileUpload.js"></script>

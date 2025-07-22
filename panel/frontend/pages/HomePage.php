@@ -125,4 +125,4 @@
     </div>
 </div>
 
-<script src="eshop/panel/frontend/assets/js/chartAnalytics.js"></script>
+<script src="/eshop/panel/frontend/assets/js/chartAnalytics.js"></script>

@@ -16,7 +16,7 @@ fileInput.addEventListener("change", ()=>{
         }
         fileNameStore.value = file.name
 
-        if (document.getElementById('removeFile')) {
+        if (!document.getElementById('removeFile')) {
             fileUploadContainer.insertAdjacentHTML('beforeend', "<i class='bi bi-x remove-file' id='removeFile'></i>")
 
             document.getElementById('removeFile').addEventListener("click", () => {
