@@ -50,60 +50,8 @@
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody class="userList">
-                            <?php $i = 1; ?>
-                            <?php foreach($users as $u): ?>
-                            <tr>
-                                <td><?php echo $i++; ?></td>
-                                <td><?php echo htmlspecialchars($u['email']); ?></td>
-                                <td><?php echo htmlspecialchars($u['full_name']); ?></td>
-                                <td><?php echo htmlspecialchars($u['username']); ?></td>
-                                <td>
-                                    <?php if(!empty($u['avatar_path'])): ?>
-                                        <img src="/eshop/panel/public/uploads/images/users/<?php echo htmlspecialchars($u['avatar_path']); ?>" 
-                                             alt="User Avatar" 
-                                             style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
-                                    <?php else: ?>
-                                        <div class="avatar-placeholder">No Image</div>
-                                    <?php endif; ?>
-                                </td>
-                                <td>
-                                    <?php
-                                        if($u['is_admin'] == 1):
-                                    ?>
-                                        <span class="status status-active">
-                                            <i class="bi bi-check-circle-fill"></i>
-                                            <span class="status-text">Yes</span>
-                                        </span>
-                                    <?php
-                                        elseif($u['is_admin'] == 0):
-                                    ?>
-                                        <span class="status status-inactive">
-                                            <i class="bi bi-x-circle-fill"></i>
-                                            <span class="status-text">No</span>
-                                        </span>
-                                    <?php
-                                        endif;
-                                    ?>
-                                </td>
-                                <td class="created-date">
-                                    <i class="bi bi-calendar-plus"></i>
-                                    <span><?php echo date('M j, Y', strtotime($u['created_at'])); ?></span>
-                                </td>
-                                <td class="updated-date">
-                                    <i class="bi bi-calendar-check"></i>
-                                    <span><?php echo date('M j, Y', strtotime($u['updated_at'])); ?></span>
-                                </td>
-                                <td>
-                                    <button class="btn btn-sm btn-edit" onclick="window.location.href = '/eshop/panel/home/users_table/edit_user?id=<?php echo $u['user_id']; ?>'">
-                                        <i class="bi bi-pencil"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-delete" onclick="if(confirm('Are you sure you want to delete this user?')) { window.location.href = '/eshop/panel/home/users_table/delete_user?id=<?php echo $u['user_id']; ?>'; }">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <?php endforeach; ?>
+                        <tbody class="itemTable">
+                            
                         </tbody>
                     </table>
                 </div>
