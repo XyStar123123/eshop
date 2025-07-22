@@ -26,6 +26,7 @@
 <script src="<?php echo $basePath ?>/frontend/assets/js/chartAnalytics.js"></script>
 <script src="<?php echo $basePath ?>/frontend/assets/js/showingPassword.js"></script>
 <script src="<?php echo $basePath ?>/frontend/assets/js/fileUpload.js"></script>
-<script src="<?php echo $basePath ?>/frontend/assets/js/usersData.js"></script>
+<script src="<?php echo $basePath ?>/frontend/assets/js/fileUpload.js"></script>
+<script src="<?php echo $basePath ?>/frontend/assets/js/formAdmin.js"></script>
 </body>
 </html>
