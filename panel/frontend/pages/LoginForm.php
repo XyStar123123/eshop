@@ -51,3 +51,5 @@
         </form>
     </div>
 </div>
+
+<script src="eshop/panel/frontend/assets/js/formAdmin.js"></script>

@@ -124,3 +124,5 @@
         <?php require_once __DIR__ . '/../../frontend/components/Footer.php' ?>
     </div>
 </div>
+
+<script src="eshop/panel/frontend/assets/js/chartAnalytics.js"></script>

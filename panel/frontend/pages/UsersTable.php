@@ -75,4 +75,4 @@
     </div>
 </div>
 
-<script src="eshop/panel/frontend/js/tooltip.js"></script>
+<script src="eshop/panel/frontend/assets/js/tooltip.js"></script>

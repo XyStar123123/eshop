@@ -95,3 +95,5 @@
         <?php require_once __DIR__ . '/../../frontend/components/Footer.php' ?>
     </div>
 </div>
+<script src="eshop/panel/frontend/assets/js/showingPassword.js"></script>
+<script src="eshop/panel/frontend/assets/js/fileUpload.js"></script>

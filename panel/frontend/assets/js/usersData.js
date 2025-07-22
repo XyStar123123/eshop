@@ -5,10 +5,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     fetch('/eshop/panel/backend/crud/users/json_users.php')
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             allItem = data
             renderTable(allItem)
-            console.log(allItem)
         })
         .catch(error => console.error('Fetch error: ', error))
 
