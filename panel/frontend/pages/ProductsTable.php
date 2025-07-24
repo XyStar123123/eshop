@@ -17,7 +17,7 @@
                 <div class="data-table-header">
                     <h2 class="data-table-title">Products Management</h2>
                     <div class="data-table-actions">
-                        <button class="btn btn-primary" onclick="window.location.href = '/eshop/panel/home/users_table/add_product'">
+                        <button class="btn btn-primary" onclick="window.location.href = '/eshop/panel/home/products_table/add_product'">
                             <i class="bi bi-plus-circle"></i>
                             <span>Add New Product</span>
                         </button>
@@ -55,7 +55,7 @@
                                 <td><?php echo htmlspecialchars($p['stock_quantity']); ?></td>
                                 <td>
                                     <?php if(!empty($p['image_path'])): ?>
-                                        <img src="/eshop/panel/public/uploads/images/users/<?php echo htmlspecialchars($p['image_path']); ?>" 
+                                        <img src="/eshop/panel/public/uploads/images/products/<?php echo htmlspecialchars($p['image_path']); ?>" 
                                              alt="User Avatar" 
                                              style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
                                     <?php else: ?>
@@ -93,7 +93,7 @@
                                     <button class="btn btn-sm btn-edit" onclick="window.location.href = '/eshop/panel/home/users_table/edit_user?id=<?php echo $p['product_id']; ?>'">
                                         <i class="bi bi-pencil"></i>
                                     </button>
-                                    <button class="btn btn-sm btn-delete" onclick="if(confirm('Are you sure you want to delete this user?')) { window.location.href = '/eshop/panel/home/users_table/delete_user?id=<?php echo $p['product_id']; ?>'; }">
+                                    <button class="btn btn-sm btn-delete" onclick="if(confirm('Are you sure you want to delete this user?')) { window.location.href = '/eshop/panel/home/products_table/delete_product?id=<?php echo $p['product_id']; ?>'; }">
                                         <i class="bi bi-trash"></i>
                                     </button>
                                 </td>

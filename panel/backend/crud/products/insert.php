@@ -1,16 +1,16 @@
 <?php
     function insert($data){
         global $conn;
-        $email = htmlspecialchars($data['email']);
-        $password = htmlspecialchars($data['password']);
-        $full_name = htmlspecialchars($data['full_name']);
-        $username = htmlspecialchars($data['username']);
-        $is_admin = htmlspecialchars($data['is_admin']);
-        $avatar = upload();
+        $name = htmlspecialchars($data['name']);
+        $description = htmlspecialchars($data['description']);
+        $price = htmlspecialchars($data['price']);
+        $stock = htmlspecialchars($data['stock']);
+        $image = upload();
+        $is_active = htmlspecialchars($data['is_active']);
         
         // Specify column names in the INSERT query to match the actual table structure
-        $query = "INSERT INTO users (email, password_hash, full_name, username, avatar_path, is_admin) VALUES 
-        ('$email', '$password', '$full_name', '$username', '$avatar', '$is_admin')";
+        $query = "INSERT INTO products (name, description, price, stock_quantity, image_path, is_active) VALUES 
+        ('$name', '$description', '$price', '$stock', '$image', '$is_active')";
         
         $result = mysqli_query($conn, $query);
         
@@ -21,21 +21,21 @@
     }
 
     function upload(){
-        if (!isset($_FILES['avatar']) || $_FILES['avatar']['error'] !== UPLOAD_ERR_OK) {
+        if (!isset($_FILES['image']) || $_FILES['image']['error'] !== UPLOAD_ERR_OK) {
             return null;
         }
 
-        if (!file_exists('/../../public/uploads/images/users/')) {
-            mkdir('/../../public/uploads/images/users/', 0777, true);
+        if (!file_exists('/../../public/uploads/images/products/')) {
+            mkdir('/../../public/uploads/images/products/', 0777, true);
         }
-        $file_name = $_FILES['avatar']['name'];
-        $tmp_name = $_FILES['avatar']['tmp_name'];
+        $file_name = $_FILES['image']['name'];
+        $tmp_name = $_FILES['image']['tmp_name'];
 
         $ext = strtolower(end(explode('.', $file_name)));
         
         $new_file_name = uniqid() . '.' . $ext;
         
-        move_uploaded_file($tmp_name, __DIR__ . '/../../../public/uploads/images/users/' . $new_file_name);
+        move_uploaded_file($tmp_name, __DIR__ . '/../../../public/uploads/images/products/' . $new_file_name);
 
         return  $new_file_name;
     }

@@ -58,6 +58,30 @@
             require __DIR__ . '/../../frontend/pages/DeleteUser.php';
             $pageTitle = getPageTitle('DeleteUser');
             break;
+        case '/home/products_table/add_product':
+            require __DIR__ . '/../../frontend/pages/AddProduct.php';
+            $pageTitle = getPageTitle('AddProduct');
+            break;
+        case '/home/products_table/edit_product':
+            require __DIR__ . '/../../frontend/pages/EditProduct.php';
+            $pageTitle = getPageTitle('EditProduct');
+            break;
+        case '/home/products_table/delete_product':
+            require __DIR__ . '/../../frontend/pages/DeleteProduct.php';
+            $pageTitle = getPageTitle('DeleteProduct');
+            break;
+        case '/home/categories_table/add_category':
+            require __DIR__ . '/../../frontend/pages/AddCategory.php';
+            $pageTitle = getPageTitle('AddCategory');
+            break;
+        case '/home/categories_table/edit_category':
+            require __DIR__ . '/../../frontend/pages/EditCategory.php';
+            $pageTitle = getPageTitle('EditCategory');
+            break;
+        case '/home/categories_table/delete_category':
+            require __DIR__ . '/../../frontend/pages/DeleteCategory.php';
+            $pageTitle = getPageTitle('DeleteCategory');
+            break;
         case '/login':
             require __DIR__ . '/../../frontend/pages/LoginForm.php';
             $pageTitle = getPageTitle('LoginForm');
