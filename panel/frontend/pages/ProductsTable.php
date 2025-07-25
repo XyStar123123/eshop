@@ -64,7 +64,7 @@
                                 </td>
                                 <td>
                                     <?php
-                                        if($p['is_active'] == 1):
+                                        if($p['is_active'] == 2):
                                     ?>
                                         <span class="status status-active">
                                             <i class="bi bi-check-circle-fill"></i>
