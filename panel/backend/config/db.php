@@ -1,8 +1,8 @@
 <?php
-    $conn = new mysqli('localhost', 'root', '', 'eshop');
+    $conn = mysqli_connect('localhost', 'root', '', 'eshop');
 
-    if ($conn->connect_error) {
-        die("Database connection failed: " . $conn->connect_error);
+    if (!$conn) {
+        die("Database connection failed: " . $conn);
     }
     
 ?>
