@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2025 at 06:22 AM
+-- Generation Time: Jul 26, 2025 at 02:08 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -89,8 +89,16 @@ CREATE TABLE `products` (
   `stock_quantity` int(11) DEFAULT 0,
   `image_path` varchar(255) DEFAULT NULL,
   `is_active` tinyint(1) DEFAULT 1,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`product_id`, `name`, `description`, `price`, `stock_quantity`, `image_path`, `is_active`, `created_at`, `updated_at`) VALUES
+(1, 'Xixixi', 'XiXixi', 123.00, 123, '6883416276143.png', 1, '2025-07-25 08:33:38', '2025-07-26 00:06:28');
 
 -- --------------------------------------------------------
 
@@ -163,7 +171,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `email`, `password_hash`, `full_name`, `username`, `avatar_path`, `is_admin`, `created_at`, `updated_at`) VALUES
 (10, 'nana@gmail.com', 'Anjay', 'Im Nor Someone', 'Shit', '687cc368b1e3d.png', 1, '2025-07-19 04:43:05', '2025-07-20 10:22:32'),
-(14, 'Niggafied@gmai.com', 'nigga', 'Nigga Em', 'Niggs', '687cd5dc4402f.jpg', 0, '2025-07-20 11:41:16', '2025-07-20 11:41:16');
+(14, 'Niggafied@gmai.com', 'nigga', 'Nigga Em', 'Niggs', '687cd5dc4402f.jpg', 0, '2025-07-20 11:41:16', '2025-07-20 11:41:16'),
+(15, 'f@gmail.com', 'Anjing', 'Anjing', 'Anjing', '687ee0896cb9c.png', 1, '2025-07-21 09:24:53', '2025-07-22 00:51:21'),
+(17, 'aa@gmail.com', 'aa', 'aa', 'aa', '687e0944eea22.png', 0, '2025-07-21 09:30:32', '2025-07-22 00:52:09');
 
 --
 -- Indexes for dumped tables
@@ -269,13 +279,13 @@ ALTER TABLE `order_items`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Constraints for dumped tables

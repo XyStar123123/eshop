@@ -25,9 +25,12 @@
             return null;
         }
 
-        if (!file_exists('/../../public/uploads/images/users/')) {
-            mkdir('/../../public/uploads/images/users/', 0777, true);
+        $targetDir = __DIR__ . '/../../../../public/uploads/images/users/';
+
+        if (!file_exists($targetDir)) {
+            mkdir($targetDir, 0777, true);
         }
+        
         $file_name = $_FILES['avatar']['name'];
         $tmp_name = $_FILES['avatar']['tmp_name'];
 
@@ -35,7 +38,7 @@
         
         $new_file_name = uniqid() . '.' . $ext;
         
-        move_uploaded_file($tmp_name, __DIR__ . '/../../../public/uploads/images/users/' . $new_file_name);
+        move_uploaded_file($tmp_name, __DIR__ . '/../../../../public/uploads/images/users/' . $new_file_name);
 
         return  $new_file_name;
     }

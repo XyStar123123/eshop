@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 <td>${item.full_name}</td>
                 <td>${item.username}</td>
                 <td>${item.avatar_path && item.avatar_path.trim() !== '' ? 
-                    `<img src="/eshop/panel/public/uploads/images/users/${item.avatar_path}" 
+                    `<img src="/eshop/public/uploads/images/users/${item.avatar_path}" 
                         alt="User Avatar" 
                         style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">` : 
                     `<div class="avatar-placeholder">No Image</div>`}
