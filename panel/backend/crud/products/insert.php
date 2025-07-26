@@ -39,4 +39,6 @@
 
         return  $new_file_name;
     }
+
+    echo null;
 ?>

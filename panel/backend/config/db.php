@@ -4,5 +4,5 @@
     if (!$conn) {
         die("Database connection failed: " . $conn);
     }
-    
+    echo null;
 ?>

@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 </td>
             `
             itemTable.appendChild(tr)
+            console.log("test")
         })
     }
 })
